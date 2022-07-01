@@ -4,14 +4,16 @@ import exception.DocumentException;
 import exception.PrivateKeyException;
 import service.GenerateSignatureImpl;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.awt.event.ActionEvent;
 
 /**
  * @author Gabriel Santos
  */
-public class App extends javax.swing.JFrame {
+public class App extends JFrame {
 
     private final GenerateSignatureImpl generateSignatureImpl;
     private final Clipboard clip;
@@ -244,19 +246,19 @@ public class App extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputKeyActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void inputKeyActionPerformed(ActionEvent evt) {
 
     }
 
-    private void signatureResultActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    private void signatureResultActionPerformed(ActionEvent evt) {
 
     }
 
-    private void inputDocumentActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    private void inputDocumentActionPerformed(ActionEvent evt) {
 
     }
 
-    private void btnCopyActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnCopyActionPerformed(ActionEvent evt) {
 //        String content = signatureResult.getSelectedText();
 //        StringSelection clipString = new StringSelection(content);
 //        clip.setContents(clipString, clipString);
@@ -264,7 +266,7 @@ public class App extends javax.swing.JFrame {
         // TODO: implementar função de copiar
     }
 
-    private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void btnGenerateActionPerformed(ActionEvent evt) {
         try {
             this.cleanInputs();
             String document = generateSignatureImpl.generateSignature(inputDocument.getText(), inputKey.getText());
@@ -324,7 +326,6 @@ public class App extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCopy;
     private javax.swing.JButton btnGenerate;
     private javax.swing.JLabel byGabriel;
