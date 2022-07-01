@@ -241,6 +241,9 @@ public class App extends javax.swing.JFrame {
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
         try {
             String document = generateSignatureImpl.generateSignature(inputDocument.getText(), inputKey.getText());
+            if (signatureResult.getText().trim().length() > 0){
+                signatureResult.setText("");
+            }
             this.signatureResult.setText(document);
         } catch (DocumentException ex) {
             this.msgStatusDocument.setText(ex.getMessage());
